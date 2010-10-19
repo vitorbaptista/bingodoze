@@ -1,37 +1,69 @@
 #page{
-width:600px;
-margin:0 auto;
+    width:600px;
+    margin:0 auto;
+}
+
+table{
+    border-collapse: collapse;
+    border-style: solid;
+    table-layout: fixed;
+}
+
+table td, table th{
+    border: 1px solid black;
+    overflow: hidden;
 }
 
 td{
-font-family:arial;
-color:#333;
-padding:10px;
-width:100px;
-height:100px;
-text-align:center;
-border:3px solid #ff0000;
-background-color:#fff;
+    font-family:arial;
+    color:#333;
+    padding:10px;
+    width:100px;
+    height:100px;
+    text-align:center;
+    background-color:#fff;
 }
 
-.bingohead{
-border:10px solid #c2324c;
+#bingohead{
+    background-color: #ff0000;
+    color: #fff;
+    font-size: 42px;
+    border: 0;
+}
+
+#borda{
+    vertical-align: top;
+    width: 14px;
+    height: 14px;
+    background-color: #ff0000;
+    padding: 0;
+    text-align: right;
+    border: 0;
+}
+
+td.rounded-nw {
+    background: url('images/nw.gif') no-repeat;
+}
+td.rounded-ne {
+    background: url('images/ne.gif') no-repeat;
+}
+td.rounded-sw {
+    background: url('images/sw.gif') no-repeat;
+}
+td.rounded-se {
+    background: url('images/se.gif') no-repeat;
 }
 
 h1, h3, h3 a{
-	font-family:arial;
-	text-align:center;
-	padding:3px;
+    font-family:arial;
+    text-align:center;
+    padding:3px;
 }
 
 td{
-cursor:pointer;
+    cursor:pointer;
 }
 
 #free{
-	background-color:#fff;
-	color:#eee;
-	cursor:default;
-    padding:0;
-    border:0;
+    background: url('images/mestre.png') no-repeat;
 }

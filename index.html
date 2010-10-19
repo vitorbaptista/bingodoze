@@ -8,48 +8,72 @@
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 
+    <script type="text/javascript" src="jquery.curvycorners.min.js"></script>
     <script type="text/javascript" src="script.js"></script>
 	<link rel="stylesheet" type="text/css" media="screen" href="style.css" />
 </head>
 <body>
 
 	<div id="page">
-	<h1>B   I   N   G   O</h1>
-	<table>
-		<tr>
+        <table id="bingo" class="bingo" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+            <td id="borda" class="rounded-nw">&nbsp;&nbsp;&nbsp;</td>
+            <th id="bingohead">B</th>
+            <th id="bingohead">I</th>
+            <th id="bingohead">N</th>
+            <th id="bingohead">G</th>
+            <th id="bingohead">O</th>
+            <td id="borda" class="rounded-ne">&nbsp;&nbsp;&nbsp;</td>
+        </tr>    
+        <tr>
+            <td id="borda"></td>
 			<td id="cell0">&nbsp;</td>
 			<td id="cell5">&nbsp;</td>
 			<td id="cell10">&nbsp;</td>
 			<td id="cell14">&nbsp;</td>
 			<td id="cell19">&nbsp;</td>
+            <td id="borda"></td>
 		</tr>
 		<tr>
+            <td id="borda"></td>
 			<td id="cell1">&nbsp;</td>
 			<td id="cell6">&nbsp;</td>
 			<td id="cell11">&nbsp;</td>
 			<td id="cell15">&nbsp;</td>
 			<td id="cell20">&nbsp;</td>
+            <td id="borda"></td>
 		</tr>
 		<tr>
+            <td id="borda"></td>
 			<td id="cell2">&nbsp;</td>
 			<td id="cell7">&nbsp;</td>
-            <td id="free"><img src="mestre.png"></td>
+            <td id="free"></td>
 			<td id="cell16">&nbsp;</td>
 			<td id="cell21">&nbsp;</td>
+            <td id="borda"></td>
 		</tr>
 		<tr>
+            <td id="borda"></td>
 			<td id="cell3">&nbsp;</td>
 			<td id="cell8">&nbsp;</td>
 			<td id="cell12">&nbsp;</td>
 			<td id="cell17">&nbsp;</td>
 			<td id="cell22">&nbsp;</td>
+            <td id="borda"></td>
 		</tr>
 		<tr>
+            <td id="borda"></td>
 			<td id="cell4">&nbsp;</td>
 			<td id="cell9">&nbsp;</td>
 			<td id="cell13">&nbsp;</td>
 			<td id="cell18">&nbsp;</td>
 			<td id="cell23">&nbsp;</td>
+            <td id="borda"></td>
+		</tr>
+        <tr>
+            <td id="borda" class="rounded-sw"></td>
+            <td id="borda" colspan="5"></td>
+            <td id="borda" class="rounded-se"></td>
 		</tr>
 	</table>
 	</div>

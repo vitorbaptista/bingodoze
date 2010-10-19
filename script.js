@@ -23,5 +23,17 @@ $(document).ready(function(){
                 toggle.color = toggle.color? "":"#fff";
          });
 
+  settings = {
+          tl: { radius: 20 },
+          tr: { radius: 20 },
+          bl: { radius: 20 },
+          br: { radius: 20 },
+          autoPad: true,
+          validTags: ["div"]
+      }
+
+
+
+        $("#page").corner(settings);
 });
 
