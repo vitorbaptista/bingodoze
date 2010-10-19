@@ -42,16 +42,16 @@ td{
 }
 
 td.rounded-nw {
-    background: url('images/nw.gif') no-repeat;
+    background: url('images/nw.gif') no-repeat left top;
 }
 td.rounded-ne {
-    background: url('images/ne.gif') no-repeat;
+    background: url('images/ne.gif') no-repeat right top;
 }
 td.rounded-sw {
-    background: url('images/sw.gif') no-repeat;
+    background: url('images/sw.gif') no-repeat left bottom;
 }
 td.rounded-se {
-    background: url('images/se.gif') no-repeat;
+    background: url('images/se.gif') no-repeat right bottom;
 }
 
 h1, h3, h3 a{
