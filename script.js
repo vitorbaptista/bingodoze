@@ -17,13 +17,9 @@ $(document).ready(function(){
             }
         }
 
-        $('#newCard').click(function(){
-                fillCards();
-        });
-
         $('td').click(function(){
                 var toggle = this.style;
-                toggle.backgroundColor = toggle.backgroundColor? "":"#333";
+                toggle.backgroundColor = toggle.backgroundColor? "":"#ff0000";
                 toggle.color = toggle.color? "":"#fff";
          });
 
