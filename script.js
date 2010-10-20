@@ -6,6 +6,8 @@ $(document).ready(function(){
                       "Solucionamento", "Mudéstia", "Conexão 30", "Niuma", "Falei com Lula e Dilma...",
                       "Me atrapalhou tudo aí", "Fardamentas", "Ispicial"];
 
+        var $dialog_bingo = $("#dialog-bingo").dialog({modal: true, resizable: false, autoOpen: false});
+
         fillCards();
 
         function fillCards(){
@@ -49,9 +51,7 @@ $(document).ready(function(){
             }
 
             if (vertical || horizontal)
-                $('#ganhou').html('GANHOU!');
-            else
-                $('#ganhou').html('');
+                $dialog_bingo.dialog('open');
         }
 
         $('td').click(function(){
@@ -59,4 +59,6 @@ $(document).ready(function(){
 
                 checkBingo();
          });
+
+
 });

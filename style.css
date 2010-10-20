@@ -79,3 +79,7 @@ td{
     bottom: 0;
     right: 0;
 }
+
+#dialog-bingo p{
+    text-align: center;
+}
