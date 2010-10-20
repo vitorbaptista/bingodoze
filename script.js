@@ -25,6 +25,8 @@ $(document).ready(function(){
             dialog_message += "Tweet</a></p>";
             $('#dialog-bingo').html(dialog_message);
 
+            $('#nova-cartela').attr('href', window.location.href.replace(/#.*/g, ''));
+
             fillCards(seed);
         }
 

@@ -83,3 +83,12 @@ td{
 #dialog-bingo p{
     text-align: center;
 }
+
+a,a:visited{
+    color:#fff;
+    text-decoration:none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
