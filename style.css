@@ -68,3 +68,8 @@ td{
     background: url('images/mestre.png') no-repeat;
     cursor:default;
 }
+
+.ativo{
+    background: #ff0000;
+    color: #fff;
+}
