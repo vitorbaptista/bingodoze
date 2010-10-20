@@ -1,10 +1,10 @@
 $(document).ready(function(){
         var termos = ["A gente ouçe", "Trankilo", "Intiligenti", "Mais milhó", "Fardamentas",
-                      "Progama", "Problemas", "Combustivé", "Eu não sô homi di mintira", "Nós coloquemu",
+                      "Progama", "Pobremas", "Combustivé", "Eu não sô homi di mintira", "Nós coloquemu",
                       "Mais alto nivi", "Cássio", "PEC 300", "Isso não é verdade",
                       "Seu tempo acabou, candidato", "Vacina contra as drogas", "Mais uma inverdade candidato",
                       "Solucionamento", "Mudéstia", "Conexão 30", "Niuma", "Falei com Lula e Dilma...",
-                      "Me atrapalhou tudo aí", "Fardamentas"];
+                      "Me atrapalhou tudo aí", "Fardamentas", "Ispicial"];
 
         fillCards();
 
