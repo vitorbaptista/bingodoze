@@ -73,3 +73,9 @@ td{
     background: #ff0000;
     color: #fff;
 }
+
+#twitter{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
