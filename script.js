@@ -8,10 +8,21 @@ $(document).ready(function(){
 
         var $dialog_bingo = $("#dialog-bingo").dialog({modal: true, resizable: false, autoOpen: false});
 
-        fillCards();
+        init();
 
-        function fillCards(){
-            var shuffle = function() { return 0.5 - Math.random() };
+        function init() {
+            var seed = window.location.hash;
+
+            if (seed == '') {
+                seed = '#' + Math.floor(Math.random() * 1000);
+                window.location = window.location + seed;
+            }
+
+            fillCards(seed);
+        }
+
+        function fillCards(seed){
+            var shuffle = function() { return 0.5 - Math.seedrandom(seed) };
             var termos_shuffled = termos.sort(shuffle);
 
             for(var i = 0; i<=24; i++){
