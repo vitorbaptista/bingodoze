@@ -4,7 +4,8 @@ $(document).ready(function(){
                       "Mais alto nivi", "Cássio", "PEC 300", "Isso não é verdade",
                       "Seu tempo acabou, candidato", "Vacina contra as drogas", "Mais uma inverdade, candidato",
                       "Solucionamento", "Mudéstia", "Conexão 30", "Niuma", "Falei com Lula e Dilma...",
-                      "Me atrapalhou tudo aí", "Fardamentas", "Ispicial"];
+                      "Me atrapalhou tudo aí", "Fardamentas", "Ispicial", "Ispicializada", "Minerial",
+                      "Devo dizer que", "Binifício", "Na realidade", "Ranquingui"];
 
         var $dialog_bingo = $("#dialog-bingo").dialog({modal: true, resizable: false, autoOpen: false});
 
