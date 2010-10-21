@@ -22,9 +22,9 @@ $(document).ready(function(){
                 window.location = window.location + seed;
             }
 
-            var tweet_message = "BINGO! Ganhei no #BingoDoZe com a cartela " + window.location + " (por @vitorbaptista)";
+            var tweet_message = "BINGO! Ganhei no #BingoDoZe com a cartela " + window.location + " (via @bingodoze)";
             var dialog_message = "<p>Parabéns, você ganhou!<br/>Compartilhe pelo twitter.</p>";
-            dialog_message += "<p><a class='twitter-share-button' data-count='horizontal' data-related='vitorbaptista' data-text='" + tweet_message;
+            dialog_message += "<p><a class='twitter-share-button' data-count='horizontal' data-related='bingodoze' data-text='" + tweet_message;
             dialog_message += "' data-url='http://labs.vitorbaptista.com/bingodoze/' href='http://twitter.com/share'>";
             dialog_message += "Tweet</a></p>";
             $('#dialog-bingo').html(dialog_message);
