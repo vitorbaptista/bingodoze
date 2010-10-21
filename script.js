@@ -15,6 +15,7 @@ $(document).ready(function(){
                       "A minha assessoria", "Herança Maldita", "Os milhores"];
 
         var dialog_bingo = $("#dialog-bingo").dialog({modal: true, resizable: false, autoOpen: false});
+        var ja_tuitou = false;
 
         init();
 
@@ -73,6 +74,7 @@ $(document).ready(function(){
             $('#dialog-bingo').html(dialog_message);
 
             dialog_bingo.dialog('open');
+            ja_tuitou = true;
         }
 
         function urlencode(str) {
@@ -120,7 +122,8 @@ $(document).ready(function(){
                 var href_without_mask = window.location.href.replace(/-.*/g, '');
                 window.location.href = href_without_mask + '-' + mask;
 
-                checkBingo();
+                if (!ja_tuitou)
+                    checkBingo();
          });
 
 
