@@ -1,4 +1,8 @@
 $(document).ready(function(){
+        var masks = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096,
+                     8192, 16384, 32768, 65536, 131072, 262144, 524288,
+                     1048576, 2097152, 4194304, 8388608, 16777216]
+
         var termos = ["A gente ouçe", "Trankilo", "Intiligenti", "Mais milhó", "Fardamentas",
                       "Progama", "Pobremas", "Combustivi", "Eu não sô homi di mintira", "Nós coloquemu",
                       "Mais alto nivi", "Cássio", "PEC 300", "Isso não é verdade",
@@ -10,28 +14,41 @@ $(document).ready(function(){
                       "Reconstrução é construção", "Ricibi", "Crementino Fraga", "Governo Anterior",
                       "A minha assessoria", "Herança Maldita", "Os milhores"];
 
-        var $dialog_bingo = $("#dialog-bingo").dialog({modal: true, resizable: false, autoOpen: false});
+        var dialog_bingo = $("#dialog-bingo").dialog({modal: true, resizable: false, autoOpen: false});
 
         init();
 
         function init() {
-            var seed = window.location.hash;
+            var seed = window.location.hash.replace(/-.*/, '');
 
             if (seed == '') {
                 seed = '#' + Math.floor(Math.random() * 1000000);
                 window.location = window.location + seed;
             }
 
-            var tweet_message = "BINGO! Ganhei no #BingoDoZe com a cartela " + window.location + " (via @bingodoze)";
-            var dialog_message = "<p>Parabéns, você ganhou!<br/>Compartilhe pelo twitter.</p>";
-            dialog_message += "<p><a class='twitter-share-button' data-count='horizontal' data-related='bingodoze' data-text='" + tweet_message;
-            dialog_message += "' data-url='http://labs.vitorbaptista.com/bingodoze/' href='http://twitter.com/share'>";
-            dialog_message += "Tweet</a></p>";
-            $('#dialog-bingo').html(dialog_message);
-
+            var mask = parseInt(window.location.hash.replace(seed + '-', ''), 16);
+            maskToCartela(mask);
             $('#nova-cartela').attr('href', window.location.href.replace(/#.*/g, ''));
 
             fillCards(seed);
+        }
+
+        function cartelaToMask() {
+            var mask = 0;
+
+            for (var i = 0; i <= 24; i++) {
+                if ($('#cell'+i).hasClass('ativo'))
+                    mask |= masks[i];
+            }
+
+            return mask;
+        }
+
+        function maskToCartela(mask) {
+            for (var i = 0; i <= 24; i++) {
+                if (mask & masks[i])
+                    $('#cell'+i).addClass('ativo');
+            }
         }
 
         function fillCards(seed){
@@ -46,6 +63,24 @@ $(document).ready(function(){
 
                 $('#cell'+i).html(termos_shuffled[i]);
             }
+        }
+
+        function bingo() {
+            var tweet_message = "BINGO! Ganhei no #BingoDoZe com a cartela " + window.location + " (via @bingodoze)";
+            tweet_message = urlencode(tweet_message);
+            var dialog_message = "<p>Parabéns, você ganhou!<br/>";
+            dialog_message += "<a href='http://twitter.com/?status=" + tweet_message + "' target='_blank'>Compartilhe pelo twitter.</a></p>";
+            $('#dialog-bingo').html(dialog_message);
+
+            dialog_bingo.dialog('open');
+        }
+
+        function urlencode(str) {
+            // http://kevin.vanzonneveld.net
+
+            str = (str+'').toString();
+            return encodeURIComponent(str).replace(/!/g, '%21').replace(/'/g, '%27').replace(/\(/g, '%28').
+                                           replace(/\)/g, '%29').replace(/\*/g, '%2A');
         }
 
         function checkBingo() {
@@ -76,11 +111,14 @@ $(document).ready(function(){
             }
 
             if (vertical || horizontal)
-                $dialog_bingo.dialog('open');
+                bingo();
         }
 
         $('td').click(function(){
                 $(this).toggleClass('ativo');
+                var mask = cartelaToMask().toString(16);
+                var href_without_mask = window.location.href.replace(/-.*/g, '');
+                window.location.href = href_without_mask + '-' + mask;
 
                 checkBingo();
          });
