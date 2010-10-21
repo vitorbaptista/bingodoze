@@ -19,7 +19,7 @@ $(document).ready(function(){
                       "Devo dizer que", "Binifício", "Na realidade", "Ranquingui", "Poço de Águas Profundas",
                       "Ricurso", "Probema", "Descobrir o céu com a peneira", "Canidato", "Ispicialmente",
                       "Reconstrução é construção", "Ricibi", "Crementino Fraga", "Governo Anterior",
-                      "A minha assessoria", "Herança Maldita", "Os milhores"];
+                      "A minha assessoria", "Herança Maldita", "Os milhores", "Nordeste Paraibano"];
 
         var dialog_bingo = $("#dialog-bingo").dialog({modal: true, resizable: false, autoOpen: false});
         var linhas = [false, false, false, false, false];
