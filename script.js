@@ -1,3 +1,10 @@
+Array.prototype.has=function(v){
+    for (i=0;i<this.length;i++){
+        if (this[i]==v) return true;
+    }
+    return false;
+}
+
 $(document).ready(function(){
         var masks = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096,
                      8192, 16384, 32768, 65536, 131072, 262144, 524288,
@@ -15,7 +22,9 @@ $(document).ready(function(){
                       "A minha assessoria", "Herança Maldita", "Os milhores"];
 
         var dialog_bingo = $("#dialog-bingo").dialog({modal: true, resizable: false, autoOpen: false});
-        var ja_tuitou = false;
+        var linhas = [false, false, false, false, false];
+        var colunas = [false, false, false, false, false];
+        var numero_bingos = Number.MAX_VALUE;
 
         init();
 
@@ -29,6 +38,10 @@ $(document).ready(function(){
 
             var mask = parseInt(window.location.hash.replace(seed + '-', ''), 16);
             maskToCartela(mask);
+
+            checkBingo()
+            numero_bingos = getNumeroBingos();
+
             $('#nova-cartela').attr('href', window.location.href.replace(/#.*/g, ''));
 
             fillCards(seed);
@@ -67,14 +80,53 @@ $(document).ready(function(){
         }
 
         function bingo() {
-            var tweet_message = "BINGO! Ganhei no #BingoDoZe com a cartela " + window.location + " (via @bingodoze)";
+            if (numero_bingos >= getNumeroBingos())
+                return;
+            numero_bingos = getNumeroBingos();
+
+            var linhas_message = getNumeroLinhas() > 0 ? getNumeroLinhas() + " linha(s)" : "";
+            var colunas_message = getNumeroColunas() > 0 ? getNumeroColunas() + " coluna(s)" : "";
+            var resultado_message = "";
+            if (linhas_message && colunas_message)
+                resultado_message += linhas_message + " e " + colunas_message;
+            else
+                resultado_message += linhas_message + colunas_message;
+
+            var tweet_message = "Fiz " + resultado_message + " no #BingoDoZe com a cartela " + window.location + " ! (via @bingodoze)";
+            var dialog_message = "<p>Parabéns, você fez " + resultado_message + "!<br/>";
+
+            if (numero_bingos == 8) {
+                tweet_message = "BINGO! Completei a cartela " + window.location + " no #BingoDoZe! (via @bingodoze)";
+                dialog_message = "<p><strong>Parabéns!</strong> Você completou sua cartela!<br/>";
+            }
+
             tweet_message = urlencode(tweet_message);
-            var dialog_message = "<p>Parabéns, você ganhou!<br/>";
             dialog_message += "<a href='http://twitter.com/?status=" + tweet_message + "' target='_blank'>Compartilhe pelo twitter.</a></p>";
             $('#dialog-bingo').html(dialog_message);
 
             dialog_bingo.dialog('open');
-            ja_tuitou = true;
+        }
+
+        function getNumeroBingos() {
+            return getNumeroLinhas() + getNumeroColunas();
+        }
+
+        function getNumeroLinhas() {
+            var result = 0;
+            for (var i = 0; i < linhas.length; i++)
+                if (linhas[i])
+                    result++;
+
+            return result;
+        }
+
+        function getNumeroColunas() {
+            var result = 0;
+            for (var i = 0; i < colunas.length; i++)
+                if (colunas[i])
+                    result++;
+
+            return result;
         }
 
         function urlencode(str) {
@@ -86,33 +138,23 @@ $(document).ready(function(){
         }
 
         function checkBingo() {
-            var horizontal = false;
             for (var i = 0; i <= 4; i++) {
-                var esta_horizontal = true;
+                linhas[i] = true;
                 for (var j = i; j <= 24; j += 5) {
                     if (!($('#cell'+j).hasClass('ativo')))
-                        esta_horizontal = false;
+                        linhas[i] = false;
                 }
-                horizontal = esta_horizontal;
-
-                if (horizontal)
-                    break;
             }
 
-            var vertical = false;
             for (var i = 0; i <= 20; i += 5) {
-                var esta_vertical = true;
+                colunas[i / 5] = true;
                 for (var j = i; j <= i + 4; j++) {
                     if (!($('#cell'+j).hasClass('ativo')))
-                        esta_vertical = false;
+                        colunas[i / 5] = false;
                 }
-
-                vertical = esta_vertical;
-                if (vertical)
-                    break;
             }
 
-            if (vertical || horizontal)
+            if (linhas.has(true) || colunas.has(true))
                 bingo();
         }
 
@@ -122,8 +164,7 @@ $(document).ready(function(){
                 var href_without_mask = window.location.href.replace(/-.*/g, '');
                 window.location.href = href_without_mask + '-' + mask;
 
-                if (!ja_tuitou)
-                    checkBingo();
+                checkBingo();
          });
 
 
