@@ -1,11 +1,14 @@
 $(document).ready(function(){
         var termos = ["A gente ouçe", "Trankilo", "Intiligenti", "Mais milhó", "Fardamentas",
-                      "Progama", "Pobremas", "Combustivé", "Eu não sô homi di mintira", "Nós coloquemu",
+                      "Progama", "Pobremas", "Combustivi", "Eu não sô homi di mintira", "Nós coloquemu",
                       "Mais alto nivi", "Cássio", "PEC 300", "Isso não é verdade",
                       "Seu tempo acabou, candidato", "Vacina contra as drogas", "Mais uma inverdade, candidato",
                       "Solucionamento", "Mudéstia", "Conexão 30", "Niuma", "Falei com Lula e Dilma...",
                       "Me atrapalhou tudo aí", "Fardamentas", "Ispicial", "Ispicializada", "Minerial",
-                      "Devo dizer que", "Binifício", "Na realidade", "Ranquingui"];
+                      "Devo dizer que", "Binifício", "Na realidade", "Ranquingui", "Poço de Águas Profundas",
+                      "Ricurso", "Probema", "Descobrir o céu com a peneira", "Canidato", "Ispicialmente",
+                      "Reconstrução é construção", "Ricibi", "Crementino Fraga", "Governo Anterior",
+                      "A minha assessoria", "Herança Maldita", "Os milhores"];
 
         var $dialog_bingo = $("#dialog-bingo").dialog({modal: true, resizable: false, autoOpen: false});
 
