@@ -32,7 +32,8 @@ $(document).ready(function(){
         }
 
         function fillCards(seed){
-            var shuffle = function() { return 0.5 - Math.seedrandom(seed) };
+            Math.seedrandom(seed);
+            var shuffle = function() { return 0.5 - Math.random(); };
             var termos_shuffled = termos.sort(shuffle);
 
             for(var i = 0; i<=24; i++){
