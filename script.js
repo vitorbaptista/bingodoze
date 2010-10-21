@@ -92,16 +92,17 @@ $(document).ready(function(){
             else
                 resultado_message += linhas_message + colunas_message;
 
-            var tweet_message = "Fiz " + resultado_message + " no #BingoDoZe com a cartela " + window.location + " ! (via @bingodoze)";
+            var tweet_message = "Fiz " + resultado_message + " no #BingoDoZe!";
             var dialog_message = "<p>Parabéns, você fez " + resultado_message + "!<br/>";
 
             if (numero_bingos == 8) {
-                tweet_message = "BINGO! Completei a cartela " + window.location + " no #BingoDoZe! (via @bingodoze)";
+                tweet_message = "BINGO! Completei a cartela no #BingoDoZe!";
                 dialog_message = "<p><strong>Parabéns!</strong> Você completou sua cartela!<br/>";
             }
 
             tweet_message = urlencode(tweet_message);
-            dialog_message += "<a href='http://twitter.com/?status=" + tweet_message + "' target='_blank'>Compartilhe pelo twitter.</a></p>";
+            var tweet_url = "http://twitter.com/share?text=" + tweet_message + "&via=bingodoze&related=vitorbaptista&url=" + window.location;
+            dialog_message += "<a href='" + tweet_url + "' onclick='javascript:window.open(\"" + tweet_url + "\", \"twitter\", \"location=0,status=0,scrollbars=0,width=500,height=500\");return false;'>Compartilhe pelo twitter.</a></p>";
             $('#dialog-bingo').html(dialog_message);
 
             dialog_bingo.dialog('open');
