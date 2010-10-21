@@ -1,12 +1,9 @@
-#page{
-    width:600px;
-    margin:0 auto;
-}
-
 table{
+    margin:0 auto;
     border-collapse: collapse;
     border-style: solid;
     table-layout: fixed;
+    width: 700px;
 }
 
 table td, table th{
@@ -18,7 +15,6 @@ td{
     font-family:arial;
     color:#333;
     padding:10px;
-    width:100px;
     height:100px;
     text-align:center;
     background-color:#fff;
