@@ -18,7 +18,7 @@ $(document).ready(function(){
             var seed = window.location.hash;
 
             if (seed == '') {
-                seed = '#' + Math.floor(Math.random() * 1000);
+                seed = '#' + Math.floor(Math.random() * 1000000);
                 window.location = window.location + seed;
             }
 
