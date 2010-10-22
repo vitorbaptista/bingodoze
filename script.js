@@ -12,7 +12,7 @@ $(document).ready(function(){
 
         var termos = ["A gente ouçe", "Trankilo", "Intiligenti", "Mais milhó", "Fardamentas",
                       "Progama", "Pobremas", "Combustivi", "Eu não sô homi di mintira", "Nós coloquemu",
-                      "Mais alto nivi", "Cássio", "PEC 300", "Isso não é verdade",
+                      "Mais alto nivi", "Cássio", "PEC 300", "Isso não é verdade", "Municipi",
                       "Seu tempo acabou, candidato", "Vacina contra as drogas", "Mais uma inverdade, candidato",
                       "Solucionamento", "Mudéstia", "Conexão 30", "Niuma", "Falei com Lula e Dilma...",
                       "Me atrapalhou tudo aí", "Fardamentas", "Ispicial", "Ispicializada", "Minerial",
@@ -100,8 +100,9 @@ $(document).ready(function(){
                 dialog_message = "<p><strong>Parabéns!</strong> Você completou sua cartela!<br/>";
             }
 
+            tweet_message += " " + window.location + " #debatetvborborema";
             tweet_message = urlencode(tweet_message);
-            var tweet_url = "http://twitter.com/share?text=" + tweet_message + "&via=bingodoze&related=vitorbaptista&url=" + window.location;
+            var tweet_url = "http://twitter.com/share?text=" + tweet_message + "&via=bingodoze&related=vitorbaptista&url=" + window.location.href.replace(/#.*/, '');
             dialog_message += "<a href='" + tweet_url + "' onclick='javascript:window.open(\"" + tweet_url + "\", \"twitter\", \"location=0,status=0,scrollbars=0,width=500,height=500\");return false;'>Compartilhe pelo twitter.</a></p>";
             $('#dialog-bingo').html(dialog_message);
 
