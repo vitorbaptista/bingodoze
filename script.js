@@ -17,7 +17,7 @@ $(document).ready(function(){
                       "Solucionamento", "Mudéstia", "Conexão 30", "Niuma", "Falei com Lula e Dilma...",
                       "Me atrapalhou tudo aí", "Fardamentas", "Ispicial", "Ispicializada", "Minerial",
                       "Devo dizer que", "Binifício", "Na realidade", "Ranquingui", "Poço de Águas Profundas",
-                      "Ricurso", "Probema", "Descobrir o céu com a peneira", "Canidato", "Ispicialmente",
+                      "Ricurso", "Probema", "Descobrir o Sol com a peneira", "Canidato", "Ispicialmente",
                       "Reconstrução é construção", "Ricibi", "Crementino Fraga", "Governo Anterior",
                       "A minha assessoria", "Herança Maldita", "Os milhores", "Nordeste Paraibano"];
 
