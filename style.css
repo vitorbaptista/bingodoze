@@ -1,5 +1,10 @@
+#page{
+    width: 100%;
+}
+
 table{
-    margin:0 auto;
+    float: left;
+    margin: 0 auto;
     border-collapse: collapse;
     border-style: solid;
     table-layout: fixed;
@@ -76,6 +81,10 @@ td{
     right: 0;
 }
 
+#twitter-widget{
+    float: right;
+}
+
 #dialog-bingo p{
     text-align: center;
 }
@@ -90,5 +99,4 @@ a:hover{
 
 #nova-cartela{
     color:#fff;
-
-
+}
