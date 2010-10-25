@@ -19,7 +19,8 @@ $(document).ready(function(){
                       "Devo dizer que", "Binifício", "Na realidade", "Ranquingui", "Poço de Águas Profundas",
                       "Ricurso", "Probema", "Descobrir o Sol com a peneira", "Canidato", "Ispicialmente",
                       "Reconstrução é construção", "Ricibi", "Crementino Fraga", "Governo Anterior",
-                      "A minha assessoria", "Herança Maldita", "Os milhores", "Nordeste Paraibano"];
+                      "A minha assessoria", "Herança Maldita", "Os milhores", "Nordeste Paraibano",
+                      "Industrializar a indústria", "Trabalhar com corte de serra"];
 
         var dialog_bingo = $("#dialog-bingo").dialog({modal: true, resizable: false, autoOpen: false});
         var linhas = [false, false, false, false, false];
