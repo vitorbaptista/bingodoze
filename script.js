@@ -20,7 +20,7 @@ $(document).ready(function(){
                       "Ricurso", "Probema", "Descobrir o céu com a peneira", "Canidato", "Ispicialmente",
                       "Reconstrução é construção", "Ricibi", "Crementino Fraga", "Governo Anterior",
                       "A minha assessoria", "Herança Maldita", "Os milhores", "Nordeste Paraibano",
-                      "Industrializar a indústria", "Trabalhar com corte de serra"];
+                      "Industrializar a indústria", "Trabalhar com corte de serra", "Supletivamente"];
 
         var dialog_bingo = $("#dialog-bingo").dialog({modal: true, resizable: false, autoOpen: false});
         var linhas = [false, false, false, false, false];
