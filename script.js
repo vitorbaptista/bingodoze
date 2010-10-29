@@ -101,7 +101,7 @@ $(document).ready(function(){
                 dialog_message = "<p><strong>Parabéns!</strong> Você completou sua cartela!<br/>";
             }
 
-            tweet_message += " " + window.location + " #debatetvtambau";
+            tweet_message += " " + window.location + " #debateredepb";
             tweet_message = urlencode(tweet_message);
             var tweet_url = "http://twitter.com/share?text=" + tweet_message + "&via=bingodoze&related=vitorbaptista&url=" + window.location.href.replace(/#.*/, '');
             dialog_message += "<a href='" + tweet_url + "' onclick='javascript:window.open(\"" + tweet_url + "\", \"twitter\", \"location=0,status=0,scrollbars=0,width=500,height=500\");return false;'>Compartilhe pelo twitter.</a></p>";
